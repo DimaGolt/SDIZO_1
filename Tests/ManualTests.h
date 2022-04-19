@@ -2,13 +2,19 @@
 #define SDIZO_1_MANUALTESTS_H
 
 
+#include "Stopwatch.h"
+
 class ManualTests {
 
 public:
+    ManualTests();
     void arrayTest();
     void heapTest();
 
     void listTest();
+
+private:
+    Stopwatch* stopwatch;
 };
 
 

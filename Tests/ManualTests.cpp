@@ -7,6 +7,8 @@
 
 using namespace std;
 
+ManualTests::ManualTests() : stopwatch(new Stopwatch()) {}
+
 void ManualTests::arrayTest() {
     Array array;
     int option = 99;
@@ -25,40 +27,57 @@ void ManualTests::arrayTest() {
             case 1:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 array.addFront(var);
+                stopwatch->stop();
                 break;
             case 2:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 array.addEnd(var);
+                stopwatch->stop();
                 break;
             case 3:
                 MenuPrints::giveVar();
                 cin >> var;
                 MenuPrints::giveIndex();
                 cin >> index;
+                stopwatch->start();
                 array.addAt(var, index);
+                stopwatch->stop();
                 break;
             case 4:
+                stopwatch->start();
                 array.removeFirst();
+                stopwatch->stop();
                 break;
             case 5:
+                stopwatch->start();
                 array.removeLast();
+                stopwatch->stop();
                 break;
             case 6:
                 MenuPrints::giveIndex();
                 cin >> index;
+                stopwatch->start();
                 array.removeAt(index);
+                stopwatch->stop();
                 break;
             case 7:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 array.contains(var);
+                stopwatch->stop();
                 break;
             case 8:
+                stopwatch->start();
                 array.print();
+                stopwatch->stop();
                 break;
         }
+        cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
 }
 
@@ -80,21 +99,30 @@ void ManualTests::heapTest() {
             case 1:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 heap.add(var);
+                stopwatch->stop();
                 break;
             case 2:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 heap.remove(var);
+                stopwatch->stop();
                 break;
             case 3:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 heap.contains(var);
+                stopwatch->stop();
                 break;
             case 4:
+                stopwatch->start();
                 heap.print();
+                stopwatch->stop();
         }
+        cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
 }
 
@@ -116,39 +144,56 @@ void ManualTests::listTest() {
             case 1:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 list.addFront(var);
+                stopwatch->stop();
                 break;
             case 2:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 list.addEnd(var);
+                stopwatch->stop();
                 break;
             case 3:
                 MenuPrints::giveVar();
                 cin >> var;
                 MenuPrints::giveIndex();
                 cin >> index;
+                stopwatch->start();
                 list.addAt(var, index);
+                stopwatch->stop();
                 break;
             case 4:
+                stopwatch->start();
                 list.removeFront();
+                stopwatch->stop();
                 break;
             case 5:
+                stopwatch->start();
                 list.removeEnd();
+                stopwatch->stop();
                 break;
             case 6:
                 MenuPrints::giveIndex();
                 cin >> index;
+                stopwatch->start();
                 list.removeAt(index);
+                stopwatch->stop();
                 break;
             case 7:
                 MenuPrints::giveVar();
                 cin >> var;
+                stopwatch->start();
                 list.contains(var);
+                stopwatch->stop();
                 break;
             case 8:
+                stopwatch->start();
                 list.print();
+                stopwatch->stop();
                 break;
         }
+        cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
 }
