@@ -29,7 +29,7 @@ void DoublyLinkedList::addFront(int var) {
     }
 }
 
-void DoublyLinkedList::addBack(int var) {
+void DoublyLinkedList::addEnd(int var) {
     if (size == 0) {
         createFirstNode(var);
     } else {
@@ -47,11 +47,11 @@ void DoublyLinkedList::addAt(int var, int index) {
     } else if (index == 0) {
         addFront(var);
     } else if (index == size) {
-        addBack(var);
+        addEnd(var);
     } else if (index < middleIndex) {
         addFromFront(index, var);
     } else {
-        addFromBack(index, var);
+        addFromEnd(index, var);
     }
 }
 
@@ -61,11 +61,11 @@ void DoublyLinkedList::contains(int var) {
     } else {
         ListNode *iter = firstNode;
 
-        do {
+        for (int i = 0; i < size; ++i) {
             if (iter->value == var)
-                cout << "Found " << var << endl;
+                cout << "Found " << var << " in [" << i << "] node" << endl;
             iter = iter->next;
-        } while (iter->next != nullptr);
+        }
     }
 }
 
@@ -84,7 +84,7 @@ void DoublyLinkedList::removeFront() {
     }
 }
 
-void DoublyLinkedList::removeBack() {
+void DoublyLinkedList::removeEnd() {
     if (size == 0) {
         cout << "List is empty" << endl;
     } else if (size == 1) {
@@ -107,13 +107,13 @@ void DoublyLinkedList::removeAt(int index) {
     } else if (index >= size || index < 0) {
         cout << "Index out of bounds" << endl;
     } else if (index == size - 1) {
-        removeBack();
+        removeEnd();
     } else if (index == 0) {
         removeFront();
     } else if (index < middleIndex) {
         removeFromFront(index);
     } else {
-        removeFromBack(index);
+        removeFromEnd(index);
     }
 }
 
@@ -122,7 +122,7 @@ void DoublyLinkedList::print() {
         ListNode *iter = firstNode;
         int index = 0;
         while (iter != nullptr) {
-            cout << index << " => " << iter->value << endl;
+            cout << "[" << index << "] => " << iter->value << endl;
             iter = iter->next;
             index++;
         }
@@ -151,7 +151,7 @@ void DoublyLinkedList::addFromFront(int index, int var) {
     size++;
 }
 
-void DoublyLinkedList::addFromBack(int index, int var) {
+void DoublyLinkedList::addFromEnd(int index, int var) {
     int currentIndex = size - 1;
     ListNode *currentNode = lastNode;
 
@@ -182,7 +182,7 @@ void DoublyLinkedList::removeFromFront(int index) {
     delete currentNode;
 }
 
-void DoublyLinkedList::removeFromBack(int index) {
+void DoublyLinkedList::removeFromEnd(int index) {
     int currentIndex = size - 1;
     ListNode *currentNode = lastNode;
 

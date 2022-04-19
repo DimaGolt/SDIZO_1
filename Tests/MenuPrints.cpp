@@ -27,6 +27,20 @@ void MenuPrints::testHeap() {
     cout << "Choice: ";
 }
 
+void MenuPrints::testList() {
+    cout << "Choose list function:" << endl;
+    cout << "    1. Add at front" << endl;
+    cout << "    2. Add at end" << endl;
+    cout << "    3. Add at index" << endl;
+    cout << "    4. Remove first" << endl;
+    cout << "    5. Remove last" << endl;
+    cout << "    6. Remove at index" << endl;
+    cout << "    7. Check if contains" << endl;
+    cout << "    8. Print array" << endl;
+    cout << "    0. Exit" << endl << endl;
+    cout << "Choice: ";
+}
+
 void MenuPrints::badOption () {
     cout << "Bad option, choose another" << endl;
 }

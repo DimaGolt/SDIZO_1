@@ -14,6 +14,8 @@ public:
     static void giveIndex();
 
     static void testHeap();
+
+    static void testList();
 };
 
 

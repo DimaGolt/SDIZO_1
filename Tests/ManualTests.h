@@ -8,6 +8,7 @@ public:
     void arrayTest();
     void heapTest();
 
+    void listTest();
 };
 
 

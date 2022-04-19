@@ -16,13 +16,12 @@ class DoublyLinkedList {
 public:
     DoublyLinkedList();
     ~DoublyLinkedList();
-
     void addFront(int var);
-    void addBack(int var);
+    void addEnd(int var);
     void addAt(int var, int index);
     void contains(int var);
     void removeFront();
-    void removeBack();
+    void removeEnd();
     void removeAt(int index);
     void print();
 
@@ -31,9 +30,9 @@ private:
     ListNode* lastNode;
     int size;
     void addFromFront(int index, int var);
-    void addFromBack(int index, int var);
+    void addFromEnd(int index, int var);
     void removeFromFront(int index);
-    void removeFromBack(int index);
+    void removeFromEnd(int index);
     void createFirstNode(int var);
 };
 
