@@ -17,24 +17,24 @@ public:
     DoublyLinkedList();
     ~DoublyLinkedList();
 
+    void addFront(int var);
+    void addBack(int var);
+    void addAt(int var, int index);
+    void contains(int var);
+    void removeFront();
+    void removeBack();
+    void removeAt(int index);
+    void print();
+
 private:
     ListNode* firstNode;
     ListNode* lastNode;
     int size;
-
-    void addFront(int var);
-
-    void addBack(int var);
-
-    void addAt(int var, int index);
-
-    void contains(int var);
-
-    void removeFront();
-
-    void removeBack();
-
-    void removeAt(int index);
+    void addFromFront(int index, int var);
+    void addFromBack(int index, int var);
+    void removeFromFront(int index);
+    void removeFromBack(int index);
+    void createFirstNode(int var);
 };
 
 
