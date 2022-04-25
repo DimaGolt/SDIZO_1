@@ -13,8 +13,11 @@ public:
 
     void listTest();
 
+    void treeTest();
+
 private:
     Stopwatch* stopwatch;
+
 };
 
 

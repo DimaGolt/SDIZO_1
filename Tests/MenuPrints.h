@@ -16,6 +16,8 @@ public:
     static void testHeap();
 
     static void testList();
+
+    static void testTree();
 };
 
 

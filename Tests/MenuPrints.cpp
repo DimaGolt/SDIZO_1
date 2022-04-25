@@ -41,6 +41,16 @@ void MenuPrints::testList() {
     cout << "Choice: ";
 }
 
+void MenuPrints::testTree() {
+    cout << "Choose tree function:" << endl;
+    cout << "    1. Add" << endl;
+    cout << "    2. Remove" << endl;
+    cout << "    3. Check if contains" << endl;
+    cout << "    4. Print tree" << endl;
+    cout << "    0. Exit" << endl << endl;
+    cout << "Choice: ";
+}
+
 void MenuPrints::badOption () {
     cout << "Bad option, choose another" << endl;
 }

@@ -4,6 +4,7 @@
 #include "MenuPrints.h"
 #include "../Heap/Heap.h"
 #include "../LinkedList/DoublyLinkedList.h"
+#include "../Tree/Tree.h"
 
 using namespace std;
 
@@ -193,6 +194,51 @@ void ManualTests::listTest() {
                 list.print();
                 stopwatch->stop();
                 break;
+        }
+        cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
+    }
+}
+
+void ManualTests::treeTest() {
+    Tree tree;
+    int option = 99;
+    int var;
+    int index;
+
+    while (option != 0) {
+        MenuPrints::testTree();
+        cin >> option;
+        switch (option) {
+            default:
+                MenuPrints::badOption();
+                break;
+            case 0:
+                break;
+            case 1:
+                MenuPrints::giveVar();
+                cin >> var;
+                stopwatch->start();
+                tree.add(var);
+                stopwatch->stop();
+                break;
+            case 2:
+                MenuPrints::giveVar();
+                cin >> var;
+                stopwatch->start();
+                tree.remove(var);
+                stopwatch->stop();
+                break;
+            case 3:
+                MenuPrints::giveVar();
+                cin >> var;
+                stopwatch->start();
+                tree.contains(var);
+                stopwatch->stop();
+                break;
+            case 4:
+                stopwatch->start();
+                tree.print();
+                stopwatch->stop();
         }
         cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
