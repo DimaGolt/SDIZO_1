@@ -43,7 +43,7 @@ int AutomaticTests::getSelected(string header)
 
 void AutomaticTests::arrayTest()
 {
-    Array* systemUnderTests = nullptr;
+    Array* systemUnderTests;
 
     int dataNumber = this->getSelected("Enter number of data");
     int repeats = this->getSelected("Enter number of repeats");
@@ -63,7 +63,7 @@ void AutomaticTests::arrayTest()
     removeResults.reserve(dataNumber);
     vector<int> searchResults;
     searchResults.reserve(dataNumber);
-    int valueToAdd = -1;
+    int valueToAdd;
     int valueToSearch = -1;
 
     for (int i = 0; i < repeats; i++)
@@ -171,7 +171,7 @@ void AutomaticTests::arrayTest()
 
 void AutomaticTests::listTest()
 {
-    DoublyLinkedList* systemUnderTests = nullptr;
+    DoublyLinkedList* systemUnderTests;
 
     int dataNumber = this->getSelected("Enter number of data");
     int repeats = this->getSelected("Enter number of repeats");
@@ -191,7 +191,7 @@ void AutomaticTests::listTest()
     removeResults.reserve(dataNumber);
     vector<int> searchResults;
     searchResults.reserve(dataNumber);
-    int valueToAdd = -1;
+    int valueToAdd;
     int valueToSearch = -1;
 
     for (int i = 0; i < repeats; i++)
@@ -301,7 +301,7 @@ void AutomaticTests::listTest()
 
 void AutomaticTests::heapTest()
 {
-    Heap* systemUnderTests = nullptr;
+    Heap* systemUnderTests;
 
     int dataNumber = this->getSelected("Enter number of data");
     int repeats = this->getSelected("Enter number of repeats");
@@ -321,7 +321,7 @@ void AutomaticTests::heapTest()
     removeResults.reserve(dataNumber);
     vector<int> searchResults;
     searchResults.reserve(dataNumber);
-    int valueToAdd = -1;
+    int valueToAdd;
     int valueToSearch = -1;
 
     for (int i = 0; i < repeats; i++)
@@ -371,7 +371,7 @@ void AutomaticTests::heapTest()
 
 void AutomaticTests::treeTest()
 {
-    Tree* systemUnderTests = nullptr;
+    Tree* systemUnderTests;
 
     int dataNumber = this->getSelected("Enter number of data");
     int repeats = this->getSelected("Enter number of repeats");
@@ -391,7 +391,7 @@ void AutomaticTests::treeTest()
     removeResults.reserve(dataNumber);
     vector<int> searchResults;
     searchResults.reserve(dataNumber);
-    int valueToAdd = -1;
+    int valueToAdd;
     int valueToSearch = -1;
 
     for (int i = 0; i < repeats; i++)

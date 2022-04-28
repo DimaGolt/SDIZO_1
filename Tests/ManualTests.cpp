@@ -94,7 +94,6 @@ void ManualTests::heapTest() {
     Heap heap;
     int option = 99;
     int var;
-    int index;
     string fileName;
 
     while (option != 0) {
@@ -228,7 +227,6 @@ void ManualTests::treeTest() {
     Tree tree;
     int option = 99;
     int var;
-    int index;
     string fileName;
 
     while (option != 0) {

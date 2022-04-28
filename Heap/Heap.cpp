@@ -101,7 +101,7 @@ int Heap::indexOf(int var) {
 
 void Heap::fromFile(string fileName) {
     ifstream file(fileName); //otwieramy plik ze ścieżki podanej przez usera
-    int elementsCount = 0;
+    int elementsCount;
     string buff = "";
     getline(file, buff);
     elementsCount = stoi(buff); //pierwsza linia pliku zawiera ilość elementów w pliku
