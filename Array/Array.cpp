@@ -156,6 +156,10 @@ void Array::print() {
     }
 }
 
+int Array::getSize() {
+    return size;
+}
+
 void Array::fromFile(string fileName) {
     ifstream file(fileName); //otwieramy plik ze ścieżki podanej przez usera
     int elementsCount = 0;

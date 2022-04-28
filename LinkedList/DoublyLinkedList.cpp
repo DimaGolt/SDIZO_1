@@ -218,3 +218,7 @@ void DoublyLinkedList::fromFile(string fileName) {
         addEnd(newTable[i]);
     }
 }
+
+int DoublyLinkedList::getSize() {
+    return size;
+}

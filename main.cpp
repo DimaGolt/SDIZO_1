@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Tests/ManualTests.h"
+#include "Tests/AutomaticTests.h"
 
 using namespace std;
 
@@ -10,5 +11,8 @@ int main() {
     tests.listTest();
     tests.heapTest();
     tests.treeTest();
+    AutomaticTests automaticTests;
+    automaticTests.heapTest();
+
     return 0;
 }

@@ -10,26 +10,17 @@ public:
     int size;
 
     Array();
-
     ~Array();
-
     void addFront(int var);
-
     void addEnd(int var);
-
     void addAt(int var, int index);
-
     void removeLast();
-
     void removeFirst();
-
     void removeAt(int index);
-
     bool contains(int var);
-
     void print();
-
     void fromFile(std::string fileName);
+    int getSize();
 };
 
 

@@ -23,6 +23,7 @@ public:
     void removeFront();
     void removeEnd();
     void removeAt(int index);
+    int getSize();
     void print();
 
     void fromFile(std::string fileName);
