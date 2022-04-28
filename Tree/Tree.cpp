@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Windows.h>
+#include <fstream>
 #include "Tree.h"
 
 using namespace std;
@@ -409,5 +410,25 @@ void Tree::deleteNodes(TreeNode* node)
         deleteNodes(node->left);
         deleteNodes(node->right);
         delete node;
+    }
+}
+
+void Tree::fromFile(string fileName) {
+    ifstream file(fileName); //otwieramy plik ze ścieżki podanej przez usera
+    int elementsCount = 0;
+    string buff = "";
+    getline(file, buff);
+    elementsCount = stoi(buff); //pierwsza linia pliku zawiera ilość elementów w pliku
+
+    int *newTable = new int[elementsCount]; //tworzymy pomocniczą dynamiczną tablicę
+
+    for (int i = 0; i < elementsCount; i++) {     // uzupełniamy pomocniczą tablicę wartościami z pliku
+        getline(file, buff);
+        newTable[i] =
+                std::stoi(buff);
+    }
+
+    for (int i = 0; i < elementsCount; ++i) {
+        add(newTable[i]);
     }
 }

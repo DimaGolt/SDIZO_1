@@ -17,6 +17,8 @@ public:
     void remove(int var);
     void print();
 
+    void fromFile(std::string fileName);
+
 private:
     int *headerPtr;
 

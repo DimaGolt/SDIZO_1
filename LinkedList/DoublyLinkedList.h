@@ -25,6 +25,8 @@ public:
     void removeAt(int index);
     void print();
 
+    void fromFile(std::string fileName);
+
 private:
     ListNode* firstNode;
     ListNode* lastNode;
@@ -34,6 +36,7 @@ private:
     void removeFromFront(int index);
     void removeFromEnd(int index);
     void createFirstNode(int var);
+
 };
 
 

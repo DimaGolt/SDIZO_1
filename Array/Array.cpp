@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "Array.h"
 
 using namespace std;
@@ -114,7 +115,7 @@ void Array::removeAt(int index) {
     } else if (size > 0 || index > 0 || index < size) {
         int *newHeaderPtr = new int[size - 1];
 
-        for (int i = 0; i < index; i++){
+        for (int i = 0; i < index; i++) {
             newHeaderPtr[i] = headerPtr[i];
         }
 
@@ -133,7 +134,7 @@ void Array::removeAt(int index) {
 
 bool Array::contains(int var) {
 
-    for(int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
         if (headerPtr[i] == var) {
             cout << "Found " << var << " at " << i << endl;
             return true;
@@ -152,5 +153,25 @@ void Array::print() {
         }
     } else {
         cout << "Array is empty" << endl;
+    }
+}
+
+void Array::fromFile(string fileName) {
+    ifstream file(fileName); //otwieramy plik ze ścieżki podanej przez usera
+    int elementsCount = 0;
+    string buff = "";
+    getline(file, buff);
+    elementsCount = stoi(buff); //pierwsza linia pliku zawiera ilość elementów w pliku
+
+    int *newTable = new int[elementsCount]; //tworzymy pomocniczą dynamiczną tablicę
+
+    for (int i = 0; i < elementsCount; i++) {     // uzupełniamy pomocniczą tablicę wartościami z pliku
+        getline(file, buff);
+        newTable[i] =
+                std::stoi(buff);
+    }
+
+    for (int i = 0; i < elementsCount; ++i) {
+        addEnd(newTable[i]);
     }
 }

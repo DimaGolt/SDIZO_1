@@ -29,6 +29,8 @@ public:
     void remove(int var);
     void print();
 
+    void fromFile(std::string fileName);
+
 private:
     TreeNode* root;
     TreeNode* guardian;
@@ -40,6 +42,7 @@ private:
     void deleteNodes(TreeNode *node);
     void deleteFixUp(TreeNode *node);
     void printBT(const std::string &prefix, const TreeNode *node, bool isLeft);
+
 };
 
 

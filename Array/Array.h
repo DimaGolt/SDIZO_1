@@ -28,6 +28,8 @@ public:
     bool contains(int var);
 
     void print();
+
+    void fromFile(std::string fileName);
 };
 
 

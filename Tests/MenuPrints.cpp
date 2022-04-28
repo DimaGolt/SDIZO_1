@@ -13,6 +13,7 @@ void MenuPrints::testArray() {
     cout << "    6. Remove at index" << endl;
     cout << "    7. Check if contains" << endl;
     cout << "    8. Print array" << endl;
+    cout << "    9. Read from file" << endl;
     cout << "    0. Exit" << endl << endl;
     cout << "Choice: ";
 }
@@ -23,6 +24,7 @@ void MenuPrints::testHeap() {
     cout << "    2. Remove" << endl;
     cout << "    3. Check if contains" << endl;
     cout << "    4. Print heap" << endl;
+    cout << "    5. Read from file" << endl;
     cout << "    0. Exit" << endl << endl;
     cout << "Choice: ";
 }
@@ -37,6 +39,7 @@ void MenuPrints::testList() {
     cout << "    6. Remove at index" << endl;
     cout << "    7. Check if contains" << endl;
     cout << "    8. Print array" << endl;
+    cout << "    9. Read from file" << endl;
     cout << "    0. Exit" << endl << endl;
     cout << "Choice: ";
 }
@@ -47,6 +50,7 @@ void MenuPrints::testTree() {
     cout << "    2. Remove" << endl;
     cout << "    3. Check if contains" << endl;
     cout << "    4. Print tree" << endl;
+    cout << "    5. Read from file" << endl;
     cout << "    0. Exit" << endl << endl;
     cout << "Choice: ";
 }
@@ -57,6 +61,10 @@ void MenuPrints::badOption () {
 
 void MenuPrints::giveVar() {
     cout << "Input variable: ";
+}
+
+void MenuPrints::giveFileName() {
+    cout << "Enter file name: ";
 }
 
 void MenuPrints::giveIndex() {

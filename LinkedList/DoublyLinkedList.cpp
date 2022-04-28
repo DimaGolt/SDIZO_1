@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "DoublyLinkedList.h"
 
 using namespace std;
@@ -196,4 +197,24 @@ void DoublyLinkedList::removeFromEnd(int index) {
     size--;
 
     delete currentNode;
+}
+
+void DoublyLinkedList::fromFile(string fileName) {
+    ifstream file(fileName); //otwieramy plik ze ścieżki podanej przez usera
+    int elementsCount = 0;
+    string buff = "";
+    getline(file, buff);
+    elementsCount = stoi(buff); //pierwsza linia pliku zawiera ilość elementów w pliku
+
+    int *newTable = new int[elementsCount]; //tworzymy pomocniczą dynamiczną tablicę
+
+    for (int i = 0; i < elementsCount; i++) {     // uzupełniamy pomocniczą tablicę wartościami z pliku
+        getline(file, buff);
+        newTable[i] =
+                std::stoi(buff);
+    }
+
+    for (int i = 0; i < elementsCount; ++i) {
+        addEnd(newTable[i]);
+    }
 }

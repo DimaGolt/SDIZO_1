@@ -15,6 +15,7 @@ void ManualTests::arrayTest() {
     int option = 99;
     int var;
     int index;
+    string fileName;
 
     while (option != 0) {
         MenuPrints::testArray();
@@ -77,6 +78,13 @@ void ManualTests::arrayTest() {
                 array.print();
                 stopwatch->stop();
                 break;
+            case 9:
+                MenuPrints::giveFileName();
+                cin >> fileName;
+                stopwatch->start();
+                array.fromFile(fileName);
+                stopwatch->stop();
+                break;
         }
         cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
@@ -87,6 +95,7 @@ void ManualTests::heapTest() {
     int option = 99;
     int var;
     int index;
+    string fileName;
 
     while (option != 0) {
         MenuPrints::testHeap();
@@ -122,6 +131,14 @@ void ManualTests::heapTest() {
                 stopwatch->start();
                 heap.print();
                 stopwatch->stop();
+                break;
+            case 5:
+                MenuPrints::giveFileName();
+                cin >> fileName;
+                stopwatch->start();
+                heap.fromFile(fileName);
+                stopwatch->stop();
+                break;
         }
         cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
@@ -132,6 +149,7 @@ void ManualTests::listTest() {
     int option = 99;
     int var;
     int index;
+    string fileName;
 
     while (option != 0) {
         MenuPrints::testList();
@@ -194,6 +212,13 @@ void ManualTests::listTest() {
                 list.print();
                 stopwatch->stop();
                 break;
+            case 9:
+                MenuPrints::giveFileName();
+                cin >> fileName;
+                stopwatch->start();
+                list.fromFile(fileName);
+                stopwatch->stop();
+                break;
         }
         cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
@@ -204,6 +229,7 @@ void ManualTests::treeTest() {
     int option = 99;
     int var;
     int index;
+    string fileName;
 
     while (option != 0) {
         MenuPrints::testTree();
@@ -239,6 +265,14 @@ void ManualTests::treeTest() {
                 stopwatch->start();
                 tree.print();
                 stopwatch->stop();
+                break;
+            case 5:
+                MenuPrints::giveFileName();
+                cin >> fileName;
+                stopwatch->start();
+                tree.fromFile(fileName);
+                stopwatch->stop();
+                break;
         }
         cout << "Time spent: " << stopwatch->getTime() << " ns" << endl;
     }
