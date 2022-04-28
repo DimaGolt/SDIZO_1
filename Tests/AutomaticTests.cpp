@@ -98,7 +98,7 @@ void AutomaticTests::arrayTest()
         delete systemUnderTests;
     }
 
-    resultFile << "Array: search, data range: 0 - " << maxDataSize << ", repeats: " << repeats
+    resultFile << "Array: contains, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(searchResults.begin(), searchResults.end(), 0) / searchResults.size()) << endl;
     resultFile << "Array: addFront, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(addResults.begin(), addResults.end(), 0) / addResults.size()) << endl;
@@ -226,7 +226,7 @@ void AutomaticTests::listTest()
         delete systemUnderTests;
     }
 
-    resultFile << "List: search, data range: 0 - " << maxDataSize << ", repeats: " << repeats
+    resultFile << "List: contains, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(searchResults.begin(), searchResults.end(), 0) / searchResults.size()) << endl;
     resultFile << "List: addFront, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(addResults.begin(), addResults.end(), 0) / addResults.size()) << endl;
@@ -357,7 +357,7 @@ void AutomaticTests::heapTest()
         delete systemUnderTests;
     }
 
-    resultFile << "Heap: search, data range: 0 - " << maxDataSize << ", repeats: " << repeats
+    resultFile << "Heap: contains, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(searchResults.begin(), searchResults.end(), 0) / searchResults.size()) << endl;
     resultFile << "Heap: add, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(addResults.begin(), addResults.end(), 0) / addResults.size()) << endl;
@@ -426,7 +426,7 @@ void AutomaticTests::treeTest()
         delete systemUnderTests;
     }
 
-    resultFile << "Tree: search, data range: 0 - " << maxDataSize << ", repeats: " << repeats
+    resultFile << "Tree: contains, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(searchResults.begin(), searchResults.end(), 0) / searchResults.size()) << endl;
     resultFile << "Tree: add, data range: 0 - " << maxDataSize << ", repeats: " << repeats
                << ", average time: " << (accumulate(addResults.begin(), addResults.end(), 0) / addResults.size()) << endl;

@@ -3,6 +3,21 @@
 
 using namespace std;
 
+void MenuPrints::mainMenu() {
+    cout << "Choose data structure:" << endl;
+    cout << "   1. Array" << endl;
+    cout << "   2. Heap" << endl;
+    cout << "   3. Doubly linked list" << endl;
+    cout << "   4. Red Black Tree" << endl;
+    cout << "   0. Exit" << endl;
+}
+
+void MenuPrints::testType() {
+    cout << "Choose test type:" << endl;
+    cout << "   1. Manual tests" << endl;
+    cout << "   2. Automatic tests" << endl;
+}
+
 void MenuPrints::testArray() {
     cout << "Choose array function:" << endl;
     cout << "    1. Add at front" << endl;
@@ -69,4 +84,18 @@ void MenuPrints::giveFileName() {
 
 void MenuPrints::giveIndex() {
     cout << "Input index: ";
+}
+
+int MenuPrints::getType() {
+    int testOption = 99;
+    while (testOption != 1 || testOption != 2) {
+        MenuPrints::testType();
+        cin >> testOption;
+        if (testOption == 1)
+            return 1;
+        else if (testOption == 2)
+            return 2;
+        else
+            MenuPrints::badOption();
+    }
 }
