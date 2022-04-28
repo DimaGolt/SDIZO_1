@@ -22,10 +22,12 @@ void Array::addFront(int var) {
     int *newHeaderPtr = new int[size + 1];
     newHeaderPtr[0] = var;
 
+    //Copy data
     for (int i = 0; i < size; i++) {
         newHeaderPtr[i + 1] = headerPtr[i];
     }
 
+    //Delete old header
     delete headerPtr;
     headerPtr = newHeaderPtr;
 
@@ -49,17 +51,21 @@ void Array::addEnd(int var) {
 
 void Array::addAt(int var, int index) {
 
+    //Check if index is correct
     if (index < 0 || index > size) {
         cout << "Can't add element at index " << index << ", out of bounds" << endl;
     } else {
 
         int *newHeaderPtr = new int[size + 1];
+        //Add variable at index
         newHeaderPtr[index] = var;
 
+        //Copy data before index
         for (int i = 0; i < index; i++) {
             newHeaderPtr[i] = headerPtr[i];
         }
 
+        //Copy data after index
         for (int i = index; i < size; i++) {
             newHeaderPtr[i + 1] = headerPtr[i];
         }
@@ -134,8 +140,10 @@ void Array::removeAt(int index) {
 
 bool Array::contains(int var) {
 
+    //Iterate until end
     for (int i = 0; i < size; i++) {
         if (headerPtr[i] == var) {
+            //Print if found
             cout << "Found " << var << " at " << i << endl;
             return true;
         }

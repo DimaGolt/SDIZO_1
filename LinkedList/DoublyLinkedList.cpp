@@ -24,7 +24,9 @@ void DoublyLinkedList::addFront(int var) {
     if (size == 0) {
         createFirstNode(var);
     } else {
+        // Create new node and set it as previous element of old first node
         firstNode->previous = new ListNode(var, firstNode, nullptr);
+        // Set created node as new first node
         firstNode = firstNode->previous;
         size++;
     }
@@ -34,7 +36,9 @@ void DoublyLinkedList::addEnd(int var) {
     if (size == 0) {
         createFirstNode(var);
     } else {
+        // Create new node and set it as next element of old first node
         lastNode->next = new ListNode(var, nullptr, lastNode);
+        // Set created node as new last node
         lastNode = lastNode->next;
         size++;
     }

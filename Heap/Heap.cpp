@@ -47,6 +47,7 @@ void Heap::remove(int var) {
     if(index == -1)
         return;
 
+    //swap searched variable with last element of heap
     swap(headerPtr[index], headerPtr[size - 1]);
 
     int *newHeaderPtr = new int[size - 1];
