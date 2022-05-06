@@ -26,7 +26,7 @@ void Heap::add(int var) {
     delete[] headerPtr;
     headerPtr = newHeadPtr;
     size++;
-    Heap::correctHeap();
+    correctHeap();
 }
 
 bool Heap::contains(int var) {
@@ -63,26 +63,43 @@ void Heap::remove(int var) {
 }
 
 void Heap::correctHeap() {
-    int childIndex = size - 1;
-    int parentIndex = (childIndex - 1) / 2;
-    bool swapped = true;
-    while (childIndex != 0 && swapped) {
-        if (headerPtr[childIndex] > headerPtr[parentIndex]) {
-            swap(headerPtr[childIndex], headerPtr[parentIndex]);
-            swapped = true;
-        } else
-            swapped = false;
-        childIndex = parentIndex;
-        parentIndex = (childIndex - 1) / 2;
+    int startIndex = (size / 2) -1;
+
+    for (int i = startIndex; i >= 0; i--)
+        heapify(i);
+}
+
+void Heap::heapify(int i) {
+    int biggest {i}, left {2*i+1}, right {2*i +2};
+
+    if(left < size && headerPtr[left] > headerPtr[biggest])
+        biggest = left;
+
+    if(right < this->size && headerPtr[right] > headerPtr[biggest])
+        biggest = right;
+
+    if(biggest != i){
+        swap(headerPtr[i], headerPtr[biggest]);
+
+        heapify(biggest);
     }
 }
 
 void Heap::print() {
     if (headerPtr != nullptr) {
+        int amountOnLevel = 1;
+        int currentLevelNum = 0;
         cout << "Heap contains: " << endl;
         for (int i = 0; i < size; i++) {
-            cout << " [" << i << "] " << headerPtr[i] << endl;
+            cout << " [" << i << "] " << headerPtr[i] << " ";
+            currentLevelNum++;
+            if (currentLevelNum == amountOnLevel){
+                cout << endl;
+                currentLevelNum = 0;
+                amountOnLevel *= 2;
+            }
         }
+        cout << endl;
     } else {
         cout << "Heap is empty" << endl;
     }

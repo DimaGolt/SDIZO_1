@@ -26,6 +26,7 @@ private:
     void correctHeap();
 
 
+    void heapify(int i);
 };
 
 
