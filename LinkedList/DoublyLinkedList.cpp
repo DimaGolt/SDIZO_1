@@ -64,13 +64,19 @@ void DoublyLinkedList::contains(int var) {
     if (size == 0) {
         cout << "List is empty" << endl;
     } else {
+        bool success = false;
         ListNode *iter = firstNode;
 
         for (int i = 0; i < size; ++i) {
-            if (iter->value == var)
+            if (iter->value == var) {
                 cout << "Found " << var << " in [" << i << "] node" << endl;
+                success = true;
+            }
             iter = iter->next;
         }
+
+        if (!success)
+            cout << "List does not contain " << var << endl;
     }
 }
 

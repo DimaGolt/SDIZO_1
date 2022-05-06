@@ -98,8 +98,10 @@ void Tree::add(int var) {
 void Tree::contains(int var) {
     if(root == guardian){
         cout << "Tree is empty" << endl;
+        return;
     }
 
+    bool success = false;
     TreeNode* helper = root;
 
     do
@@ -107,6 +109,7 @@ void Tree::contains(int var) {
         if (var == helper->value)
         {
             cout << "Found " << var << endl;
+            success = true;
             break;
         }
 
@@ -120,6 +123,9 @@ void Tree::contains(int var) {
             helper = helper->right;
         }
     } while (helper != guardian);
+
+    if (!success)
+        cout << "Tree does not contain " << var << endl;
 }
 
 void Tree::remove(int var) {
